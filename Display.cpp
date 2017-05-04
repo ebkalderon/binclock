@@ -70,20 +70,20 @@ void Display::print_time_binary(const Time &val)
    {
        if (digits.charAt(i) == '1'){
        unsigned height = MATRIX.height();
-       MATRIX.drawFastVLine(i, 0, height, LED_ON);
+       MATRIX.drawFastVLine((i + 3), 0, height, LED_ON);
        }
    }
-   
-   MATRIX.drawFastVLine(5, 0, 3, LED_ON);
-   MATRIX.drawFastVLine(5, 5, 3, LED_ON);
-   MATRIX.drawFastVLine(6, 0, 3, LED_ON);
-   MATRIX.drawFastVLine(6, 5, 3, LED_ON);
-   MATRIX.drawFastVLine(7, 0, 3, LED_ON);
-   MATRIX.drawFastVLine(7, 5, 3, LED_ON);
-   MATRIX.drawFastVLine(8, 0, 3, LED_ON);
-   MATRIX.drawFastVLine(8, 5, 3, LED_ON);
-   MATRIX.drawFastVLine(9, 0, 3, LED_ON);
-   MATRIX.drawFastVLine(9, 5, 3, LED_ON);
+
+   // MATRIX.drawFastVLine(5, 0, 3, LED_ON);
+   // MATRIX.drawFastVLine(5, 5, 3, LED_ON);
+   // MATRIX.drawFastVLine(6, 0, 3, LED_ON);
+   // MATRIX.drawFastVLine(6, 5, 3, LED_ON);
+   // MATRIX.drawFastVLine(7, 0, 3, LED_ON);
+   // MATRIX.drawFastVLine(7, 5, 3, LED_ON);
+   MATRIX.drawFastVLine(8, 0, 2, LED_ON);
+   MATRIX.drawFastVLine(8, 6, 2, LED_ON);
+   MATRIX.drawFastVLine(9, 0, 2, LED_ON);
+   MATRIX.drawFastVLine(9, 6, 2, LED_ON);
 
    for (int i = 5; i < digits.length(); i++)
    {

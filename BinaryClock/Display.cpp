@@ -46,17 +46,53 @@ void Display::print_static_text(const String &text)
     delay(1000);
 }
 
+ // void Display::print_time_binary(const Time &val)
+ // {
+ //     MATRIX.clear();
+ //
+ //     String digits = val.to_binary_string();
+ //     for (int i = 0; i < digits.length(); i++) {
+ //         if (digits.charAt(i) == '1') {
+ //             unsigned height = MATRIX.height();
+ //             MATRIX.drawFastVLine(i, 0, height, LED_ON);
+ //         }
+ //     }
+ //
+ //     MATRIX.writeDisplay();
+ // }
+
 void Display::print_time_binary(const Time &val)
 {
-    MATRIX.clear();
+   MATRIX.clear();
 
-    String digits = val.to_binary_string();
-    for (int i = 0; i < digits.length(); i++) {
-        if (digits.charAt(i) == '1') {
-            unsigned height = MATRIX.height();
-            MATRIX.drawFastVLine(i, 0, height, LED_ON);
-        }
-    }
+   String digits = val.to_binary_string();
+   for (int i = 0; i < 5; i++)
+   {
+       if (digits.charAt(i) == '1'){
+       unsigned height = MATRIX.height();
+       MATRIX.drawFastVLine(i, 0, height, LED_ON);
+       }
+   }
+   
+   MATRIX.drawFastVLine(5, 0, 3, LED_ON);
+   MATRIX.drawFastVLine(5, 5, 3, LED_ON);
+   MATRIX.drawFastVLine(6, 0, 3, LED_ON);
+   MATRIX.drawFastVLine(6, 5, 3, LED_ON);
+   MATRIX.drawFastVLine(7, 0, 3, LED_ON);
+   MATRIX.drawFastVLine(7, 5, 3, LED_ON);
+   MATRIX.drawFastVLine(8, 0, 3, LED_ON);
+   MATRIX.drawFastVLine(8, 5, 3, LED_ON);
+   MATRIX.drawFastVLine(9, 0, 3, LED_ON);
+   MATRIX.drawFastVLine(9, 5, 3, LED_ON);
 
-    MATRIX.writeDisplay();
+   for (int i = 5; i < digits.length(); i++)
+   {
+       if (digits.charAt(i) == '1'){
+       unsigned height = MATRIX.height();
+       MATRIX.drawFastVLine((i + 5), 0, height, LED_ON);
+       }
+   }
+
+   MATRIX.writeDisplay();
+
 }
